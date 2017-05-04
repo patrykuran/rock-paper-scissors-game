@@ -1,0 +1,8 @@
+body {
+	background: url("../images/background.png");
+	background-color: #8a94cc;
+}
+
+.container {
+	padding: 25px 0;
+}
