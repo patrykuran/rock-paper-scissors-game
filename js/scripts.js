@@ -60,7 +60,7 @@ function newGame() {
     setGameElements();
 
     playerNameElem.innerHTML = player.name;
-    	setGamePoints();
+    setGamePoints();
   }
 
 }
@@ -126,10 +126,10 @@ console.log(player.score, computer.score);
 function gameFinished() {
     if (player.score == 10) {
         alert("Wygrał " + player.name + "!")
+        gameState = 'notStarted'
     } else if (computer.score == 10) {
         alert("Wygrał komputer!")
+        gameState = 'notStarted'
     }
-    gameState = 'notStarted'
     setGameElements();
-    }
 }
