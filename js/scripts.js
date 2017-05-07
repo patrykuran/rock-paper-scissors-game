@@ -39,7 +39,7 @@ function setGameElements() {
 		case 'ended':
 				newGameBtn.innerText = 'Jeszcze raz';
                 playerPickElem.textContent = "Wybór gracza";
-                computerPickElem.textContent = "Wybór komputera";
+                computerPickElem.textContent = "Wybór komputera"; // dlaczego ponowne pobranie treści z HTML'a nie działa? (computerPickElem.textContent = document.getElementById('js-computerPick') ) //
                 playerResultElem.textContent = "Wynik gracza";
                 computerResultElem.textContent = "Wynik komputera";
 		case 'notStarted':
