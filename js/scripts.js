@@ -38,6 +38,10 @@ function setGameElements() {
 			break;
 		case 'ended':
 				newGameBtn.innerText = 'Jeszcze raz';
+                playerPickElem.textContent = "Wybór gracza";
+                computerPickElem.textContent = "Wybór komputera";
+                playerResultElem.textContent = "Wynik gracza";
+                computerResultElem.textContent = "Wynik komputera";
 		case 'notStarted':
 		default:
 				newGameElem.style.display = 'block';
@@ -121,15 +125,13 @@ function setGamePoints() {
     computerPointsElem.innerHTML = computer.score;
 }
 
-console.log(player.score, computer.score);
-
 function gameFinished() {
     if (player.score == 10) {
         alert("Wygrał " + player.name + "!")
-        gameState = 'notStarted'
+        gameState = 'ended'
     } else if (computer.score == 10) {
         alert("Wygrał komputer!")
-        gameState = 'notStarted'
+        gameState = 'ended'
     }
     setGameElements();
 }
