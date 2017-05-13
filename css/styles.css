@@ -1,7 +1,7 @@
 body {
 	background-image: url("../images/background.png");
 	background-color: #8a94cc;
-	background-position: center 1000px;
+	background-position: center 25vh;
 	background-repeat: repeat;
 	font-family: 'Amatic SC', cursive;
 	text-transform: uppercase;
@@ -34,7 +34,7 @@ h3 {
 #js-playerPick_scissors {
 	font-size: 50px;
     font-weight: 700;
-    margin: 0 60px;
+    margin: 10px 60px;
     border-radius: 50%;
 }
 
@@ -56,19 +56,37 @@ h3 {
 	background-color: #D9534F;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1366px) {
 	
 	body {
-		background:#28B4E5;
 		font-size: 35px;
+	}
+
+	.container {
+		padding: 12px 0;
+	}
+
+	h3 {
+		font-size: 50px;
+	}
+
+	.text-center {
+		line-height: 80px;
 	}
 
 	#js-playerPick_rock,
 	#js-playerPick_paper,
 	#js-playerPick_scissors {
 		font-size: 50px;
-	    font-weight: 700;
-	    margin: 0 20px;
-	    border-radius: 50%;
+	    margin: 0 25px;
+	}
+}
+
+@media (max-width: 768px) {
+	
+	body {
+		background:#28B4E5;
+		background-position: center 15vh;
+		font-size: 35px;
 	}
 }
