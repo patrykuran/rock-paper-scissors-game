@@ -73,10 +73,16 @@ function newGame() {
       swal.showInputError("You need to write your name!");
       return false;
     }
-    swal("Let's start!", "Take a challenge " + inputValue, "success");
-    player.name = inputValue
+     swal("Let's start!", "Take a challenge " + inputValue, "success");
+
+    /***
+      inputValue - to imie gracza
+      to wartosc podana w inpucie
+      musisz ja przypisac do zmiennej
+    ***/
+      player.name = inputValue
   });
-    
+
   if (player.name) {
     player.score = computer.score = 0;
     gameState = 'started';
