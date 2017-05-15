@@ -7,13 +7,13 @@ var pickRock = document.getElementById('js-playerPick_rock'),
     pickScissors = document.getElementById('js-playerPick_scissors');
 
 pickRock.addEventListener('click', function() { 
-	playerPick('rock')   // playerPick to funkcja z linii 68? //
+    playerPick('rock')   // playerPick to funkcja z linii 68? //
 });
 pickPaper.addEventListener('click', function() { 
-	playerPick('paper')
+    playerPick('paper')
 });
 pickScissors.addEventListener('click', function() {
-	playerPick('scissors') 
+    playerPick('scissors') 
 });
 
 var gameState = 'notStarted' // ended , started //  // co to za zmienna? object? //
@@ -26,28 +26,28 @@ var gameState = 'notStarted' // ended , started //  // co to za zmienna? object?
     };
 
 var newGameElem = document.getElementById('js-newGameElement'),
-	pickElem = document.getElementById('js-playerPickElement'),
-	resultsElem = document.getElementById('js-resultsTableElement');
+    pickElem = document.getElementById('js-playerPickElement'),
+    resultsElem = document.getElementById('js-resultsTableElement');
 
 function setGameElements() {
-	switch(gameState) {
-		case 'started':
-				newGameElem.style.display = 'none';
-				pickElem.style.display = 'block';
-				resultsElem.style.display = 'block';
-			break;
-		case 'ended':
-				newGameBtn.innerText = 'Jeszcze raz';
+    switch(gameState) {
+        case 'started':
+                newGameElem.style.display = 'none';
+                pickElem.style.display = 'block';
+                resultsElem.style.display = 'block';
+            break;
+        case 'ended':
+                newGameBtn.innerText = 'Jeszcze raz';
                 playerPickElem.textContent = "Wybór gracza";
                 computerPickElem.textContent = "Wybór komputera"; // dlaczego ponowne pobranie treści z HTML'a nie działa? (computerPickElem.textContent = document.getElementById('js-computerPick') ) //
                 playerResultElem.textContent = "Wynik gracza";
                 computerResultElem.textContent = "Wynik komputera";
-		case 'notStarted':
-		default:
-				newGameElem.style.display = 'block';
-				pickElem.style.display = 'none';
-				resultsElem.style.display = 'none';
-	}
+        case 'notStarted':
+        default:
+                newGameElem.style.display = 'block';
+                pickElem.style.display = 'none';
+                resultsElem.style.display = 'none';
+    }
 }
 
 setGameElements();
@@ -92,28 +92,28 @@ function playerPick(playerPick) {
 }
 
 function checkRoundWinner(playerPick, computerPick) {
-	playerResultElem.innerHTML = computerResultElem.innerHTML = '';
+    playerResultElem.innerHTML = computerResultElem.innerHTML = '';
 
-	var winnerIs = 'player';
+    var winnerIs = 'player';
 
-	if (playerPick == computerPick) {
+    if (playerPick == computerPick) {
         winnerIs = 'noone'; // remis
         playerResultElem.innerHTML = "Remis!";
         computerResultElem.innerHTML = "Remis!";
     } else if (
-    	(computerPick == 'rock' &&  playerPick == 'scissors') ||
-    	(computerPick == 'scissors' &&  playerPick == 'paper') ||
-    	(computerPick == 'paper' &&  playerPick == 'rock')) {
+        (computerPick == 'rock' &&  playerPick == 'scissors') ||
+        (computerPick == 'scissors' &&  playerPick == 'paper') ||
+        (computerPick == 'paper' &&  playerPick == 'rock')) {
 
-    	winnerIs = 'computer';
+        winnerIs = 'computer';
     }
 
     if (winnerIs == 'player') {
-    	playerResultElem.innerHTML = "Wygrana!";
-    	player.score++;
+        playerResultElem.innerHTML = "Wygrana!";
+        player.score++;
     } else if (winnerIs == 'computer') {
-    	computerResultElem.innerHTML = "Wygrana!";
-    	computer.score++;
+        computerResultElem.innerHTML = "Wygrana!";
+        computer.score++;
     }
 
     setGamePoints();
