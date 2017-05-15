@@ -37,11 +37,11 @@ function setGameElements() {
                 resultsElem.style.display = 'block';
             break;
         case 'ended':
-                newGameBtn.innerText = 'Jeszcze raz';
-                playerPickElem.textContent = "Wybór gracza";
-                computerPickElem.textContent = "Wybór komputera"; // dlaczego ponowne pobranie treści z HTML'a nie działa? (computerPickElem.textContent = document.getElementById('js-computerPick') ) //
-                playerResultElem.textContent = "Wynik gracza";
-                computerResultElem.textContent = "Wynik komputera";
+                newGameBtn.innerText = 'Play again';
+                playerPickElem.textContent = "Player's choice";
+                computerPickElem.textContent = "Computer's choice"; // dlaczego ponowne pobranie treści z HTML'a nie działa? (computerPickElem.textContent = document.getElementById('js-computerPick') ) //
+                playerResultElem.textContent = "Player's score";
+                computerResultElem.textContent = "Computer's score";
         case 'notStarted':
         default:
                 newGameElem.style.display = 'block';
@@ -118,8 +118,8 @@ function checkRoundWinner(playerPick, computerPick) {
 
     if (playerPick == computerPick) {
         winnerIs = 'noone'; // remis
-        playerResultElem.innerHTML = "Remis!";
-        computerResultElem.innerHTML = "Remis!";
+        playerResultElem.innerHTML = "Tie!";
+        computerResultElem.innerHTML = "Tie!";
     } else if (
         (computerPick == 'rock' &&  playerPick == 'scissors') ||
         (computerPick == 'scissors' &&  playerPick == 'paper') ||
@@ -129,10 +129,10 @@ function checkRoundWinner(playerPick, computerPick) {
     }
 
     if (winnerIs == 'player') {
-        playerResultElem.innerHTML = "Wygrana!";
+        playerResultElem.innerHTML = "Win!";
         player.score++;
     } else if (winnerIs == 'computer') {
-        computerResultElem.innerHTML = "Wygrana!";
+        computerResultElem.innerHTML = "Win!";
         computer.score++;
     }
 
