@@ -73,26 +73,21 @@ function newGame() {
       swal.showInputError("You need to write your name!");
       return false;
     }
-     swal("Let's start!", "Take a challenge " + inputValue, "success");
+    swal("Let's start!", "Take a challenge " + inputValue, "success");
+    player.name = inputValue;
+    
+    
+    if (player.name) {
+      player.score = computer.score = 0;
+      gameState = 'started';
+      setGameElements();
 
-    /***
-      inputValue - to imie gracza
-      to wartosc podana w inpucie
-      musisz ja przypisac do zmiennej
-    ***/
-      player.name = inputValue
-  });
+      playerNameElem.innerHTML = player.name;
+      setGamePoints();
+    }
+  }); // koniec wywolania swal    
 
-  if (player.name) {
-    player.score = computer.score = 0;
-    gameState = 'started';
-    setGameElements();
-
-    playerNameElem.innerHTML = player.name;
-    setGamePoints();
-  }
-
-}
+} // domkniecie funkcji newGame
 
 function playerPick(playerPick) {  // ten drugi playerPick odwołuje się do "playerPick('rock')/('paper')/('scissors'), linia 10, 13, 16? //
     console.log(playerPick); // po wpisaniu dalszego kodu juz w konsoli nie wyświetla, czemu? //
@@ -152,10 +147,14 @@ function setGamePoints() {
 
 function gameFinished() {
     if (player.score == 10) {
-        alert("Wygrał " + player.name + "!")
+        swal("Hooray!", player.name + " wins!", "success")
         gameState = 'ended'
     } else if (computer.score == 10) {
-        alert("Wygrał komputer!")
+        sweetAlert({
+        title: "Oh no!", 
+        text: "Computer is the winner", 
+        type: "error"
+    });
         gameState = 'ended'
     }
     setGameElements();
