@@ -1,13 +1,13 @@
 var newGameBtn = document.getElementById('js-newGameButton');
 
-newGameBtn.addEventListener('click', newGame); //newGame to funkcja? gdzie ją definujemy, uzywamy? //
+newGameBtn.addEventListener('click', newGame);
 
 var pickRock = document.getElementById('js-playerPick_rock'),
     pickPaper = document.getElementById('js-playerPick_paper'),
     pickScissors = document.getElementById('js-playerPick_scissors');
 
 pickRock.addEventListener('click', function() { 
-    playerPick('rock')   // playerPick to funkcja z linii 68? //
+    playerPick('rock')
 });
 pickPaper.addEventListener('click', function() { 
     playerPick('paper')
@@ -16,7 +16,7 @@ pickScissors.addEventListener('click', function() {
     playerPick('scissors') 
 });
 
-var gameState = 'notStarted' // ended , started //  // co to za zmienna? object? //
+var gameState = 'notStarted'
     player = {
         name: '',
         score: 0
@@ -39,7 +39,7 @@ function setGameElements() {
         case 'ended':
                 newGameBtn.innerText = 'Play again';
                 playerPickElem.textContent = "Player's choice";
-                computerPickElem.textContent = "Computer's choice"; // dlaczego ponowne pobranie treści z HTML'a nie działa? (computerPickElem.textContent = document.getElementById('js-computerPick') ) //
+                computerPickElem.textContent = "Computer's choice";
                 playerResultElem.textContent = "Player's score";
                 computerResultElem.textContent = "Computer's score";
         case 'notStarted':
@@ -89,14 +89,14 @@ function newGame() {
 
 } // domkniecie funkcji newGame
 
-function playerPick(playerPick) {  // ten drugi playerPick odwołuje się do "playerPick('rock')/('paper')/('scissors'), linia 10, 13, 16? //
-    console.log(playerPick); // po wpisaniu dalszego kodu juz w konsoli nie wyświetla, czemu? //
+function playerPick(playerPick) {  
+    console.log(playerPick);
 }
 
 function getComputerPick() {
     var possiblePicks = ['rock', 'paper', 'scissors'];
-    return possiblePicks[Math.floor(Math.random()*3)]; // nawiasem kwadratowym wyciągamy index z computerPick? / dlaczego *3? //
-} // >0,3 da w zaokrągleniu 0; >0,5< da 1; 0,51< da 2 ? //
+    return possiblePicks[Math.floor(Math.random()*3)];
+}
 
 var playerPickElem = document.getElementById('js-playerPick'),
     computerPickElem = document.getElementById('js-computerPick'),
