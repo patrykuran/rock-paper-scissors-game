@@ -57,7 +57,26 @@ var playerPointsElem = document.getElementById('js-playerPoints'),
     computerPointsElem = document.getElementById('js-computerPoints');
 
 function newGame() {
-  player.name = prompt('Graczu, wpisz swoje imię', 'imię gracza'); //'imię gracza' to placeholder?//
+  swal({
+    title: "Who are you?",
+    text: "Type your name:",
+    type: "input",
+    showCancelButton: true,
+    closeOnConfirm: false,
+    animation: "slide-from-top",
+    inputPlaceholder: "player's name"
+  },
+  function(inputValue){
+    if (inputValue === false) return false;
+
+    if (inputValue === "") {
+      swal.showInputError("You need to write your name!");
+      return false;
+    }
+    swal("Let's start!", "Take a challenge " + inputValue, "success");
+    player.name = inputValue
+  });
+    
   if (player.name) {
     player.score = computer.score = 0;
     gameState = 'started';
