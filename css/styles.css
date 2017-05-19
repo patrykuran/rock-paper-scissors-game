@@ -29,6 +29,10 @@ h3 {
     font-weight: 700;
 }
 
+#js-newGameElement > .row {
+	margin: 0;
+}
+
 #js-playerPick_rock,
 #js-playerPick_paper,
 #js-playerPick_scissors {
