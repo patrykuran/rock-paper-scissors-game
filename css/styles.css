@@ -88,6 +88,11 @@ h3 {
 	body {
 		background:#28B4E5;
 		background-position: center 15vh;
-		font-size: 35px;
+		font-size: 25px;
 	}
+	
+	#js-playerPick_rock,
+	#js-playerPick_paper,
+	#js-playerPick_scissors {
+		margin: 0;
 }
