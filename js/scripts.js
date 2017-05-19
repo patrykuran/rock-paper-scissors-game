@@ -1,3 +1,7 @@
+if (window.innerHeight > window.innerWidth) {
+    swal("The game works better if you turn your device horizontaly");
+}
+
 var newGameBtn = document.getElementById('js-newGameButton');
 
 newGameBtn.addEventListener('click', newGame);
