@@ -159,7 +159,7 @@ function gameFinished() {
     }
     setGameElements();
 }
-
-if (window.innerHeight > window.innerWidth) {
-    swal("The game works better if you turn your device horizontaly");
-}
+// To-do: display a message
+// if (window.innerHeight > window.innerWidth) {
+//     swal("The game works better if you turn your device horizontaly");
+// }
